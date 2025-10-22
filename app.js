@@ -96,6 +96,38 @@ app.get('/cuentas/:id', (req, res) => {
   }
 });
 
+app.get('/cuentasBalance', (req, res) => {
+  try {
+    const cuentasActivas = cuentas.filter(c => c.isActive);
+
+    if (cuentasActivas.length === 0) {
+      return res.json({
+        status: false,
+        accountBalance: 0
+      });
+    }
+
+    const total = cuentasActivas.reduce((acum, cuenta) => {
+      const balanceNumber = parseFloat(
+        cuenta.balance.replace(/[$,]/g, '') 
+      );
+      return acum + balanceNumber;
+    }, 0);
+
+    res.json({
+      status: true,
+      accountBalance: total
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      status: false,
+      message: 'Error interno del servidor'
+    });
+  }
+});
+
 // caso de poner un endpoint que no existe
 app.use((req, res) => {
   res.status(404).json({ 
