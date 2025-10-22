@@ -1,0 +1,23 @@
+{
+  "name": "parcial2_pw_sec01_c2_2025_00171124",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JartigaRox/Parcial2_PW_Sec01_C2_2025_00171124.git"
+  },
+  "author": "Jeremías Artiga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JartigaRox/Parcial2_PW_Sec01_C2_2025_00171124/issues"
+  },
+  "homepage": "https://github.com/JartigaRox/Parcial2_PW_Sec01_C2_2025_00171124#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
